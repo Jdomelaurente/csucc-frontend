@@ -120,7 +120,7 @@ onMounted(() => {
 async function updateAccount() {
   try {
     const token = localStorage.getItem('token')
-    const response = await fetch('http://localhost:8000/api/user', {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/user`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -151,7 +151,7 @@ async function deleteAccount() {
   
   try {
     const token = localStorage.getItem('token')
-    const response = await fetch('http://localhost:8000/api/user', {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/user`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${token}`

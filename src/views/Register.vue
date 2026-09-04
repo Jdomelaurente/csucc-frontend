@@ -72,7 +72,7 @@ async function handleRegister() {
   error.value = ''
   isLoading.value = true
   try {
-    const res = await fetch('/api/register', {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
